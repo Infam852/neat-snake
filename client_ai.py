@@ -86,7 +86,7 @@ def eval_genomes(genomes, config):
             snake.move(direction)
             # closer to target - get better score (not always true)
             if distance < last_distances[k]:
-                ge[k].fitness += 0.3
+                ge[k].fitness += 0.2
                 # print('closer')
                 # lifetimes[k] += 1
             # else:
@@ -215,7 +215,7 @@ def eval_genomes2(genomes, config):
             # check whether the snake is out of the map or not
             elif snake.body[0][0] < 0 or snake.body[0][0] > GRID_TILES_X - 1 or snake.body[0][1] < 0 or snake.body[0][
                 1] > GRID_TILES_Y - 1:
-                g.fitness -= 20
+                g.fitness -= 100
                 break
             if target_on_line(snake.head[0], snake.head[1], target.x, target.y):
                 g.fitness += 5
